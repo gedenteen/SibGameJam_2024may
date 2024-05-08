@@ -11,11 +11,18 @@ public class MainCharacter : MonoBehaviour
     
     private Vector2 moveInput;
     private Vector2 moveVelocity;
+    private bool eventGameOverIsInvoked = false;
 
     private void Update()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveVelocity = moveInput * speed;    
+        moveVelocity = moveInput * speed;
+
+        if (hitpoints <= 0 && eventGameOverIsInvoked == false)
+        {
+            GameplayEvents.eventGameOver.Invoke();
+            eventGameOverIsInvoked = true;
+        } 
     }
 
     private void FixedUpdate()
