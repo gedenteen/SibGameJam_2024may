@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-    public float speed;
+    public float speed = 7f;
+    public int hitpoints = 5;
 
     [SerializeField] private Rigidbody2D rigidbody2D;
     

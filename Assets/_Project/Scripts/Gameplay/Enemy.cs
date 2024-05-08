@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 3f;
+    public float hitpoints = 2;
 
     private MainCharacter mainCharacter;
 
