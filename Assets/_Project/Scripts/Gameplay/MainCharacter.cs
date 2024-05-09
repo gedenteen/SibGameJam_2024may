@@ -26,7 +26,7 @@ public class MainCharacter : Character
 
         if (nearbyExcavationSite != null)
         {
-            if (onExcavationSite && Input.GetKey(KeyCode.E))
+            if (onExcavationSite && Input.GetKey(KeyCode.K))
             {
                 Dig(true);
             }

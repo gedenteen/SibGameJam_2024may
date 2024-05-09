@@ -46,12 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72eb5c60fdfcaa54d907feb75bd83486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialTime: 6
+  initialTime: 8
   isDigging: 0
   sprites:
   - {fileID: 120408953, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
   - {fileID: 1782574729, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
   - {fileID: -410983883, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
+  - {fileID: 21300000, guid: 3c0b2fce17cd15a4da68de99c8f87170, type: 3}
   targetSpriteRenderer: {fileID: 2821326138829228267}
   remainingTime: 0
   timers: []
