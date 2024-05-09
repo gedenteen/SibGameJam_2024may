@@ -6,12 +6,18 @@ public class MainCharacter : Character
 {
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private GameObject myShovel;
+    [SerializeField] private ZombieSpawner[] zombieSpawners;
     
     private Vector2 moveInput;
     private Vector2 moveVelocity;
     private bool eventGameOverIsInvoked = false;
     private bool onExcavationSite = false;
     private ExcavationSite nearbyExcavationSite = null;
+
+    private void OnValidate()
+    {
+        zombieSpawners = FindObjectsOfType<ZombieSpawner>();
+    }
 
     private void Update()
     {
@@ -26,7 +32,7 @@ public class MainCharacter : Character
 
         if (nearbyExcavationSite != null)
         {
-            if (onExcavationSite && Input.GetKey(KeyCode.K))
+            if (onExcavationSite && Input.GetKey(KeyCode.F))
             {
                 Dig(true);
             }
@@ -76,5 +82,9 @@ public class MainCharacter : Character
     {
         myShovel.SetActive(value);
         nearbyExcavationSite.SetStateIsDigging(value);
+        foreach (ZombieSpawner zombieSpawner in zombieSpawners)
+        {
+            zombieSpawner.SetStateIsDigging(value);
+        }
     }
 }
