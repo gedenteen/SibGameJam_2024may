@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4156563512954042782
 Transform:
   m_ObjectHideFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   speed: 7
   hitpoints: 5
   rigidbody2D: {fileID: 1957372002383505098}
+  myShovel: {fileID: 1750863136736679955}
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
