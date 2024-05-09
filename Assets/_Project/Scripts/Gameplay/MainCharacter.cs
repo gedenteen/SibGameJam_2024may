@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCharacter : MonoBehaviour
+public class MainCharacter : Character
 {
-    public float speed = 7f;
-    public int hitpoints = 5;
-
     [SerializeField] private Rigidbody2D rigidbody2D;
     
     private Vector2 moveInput;

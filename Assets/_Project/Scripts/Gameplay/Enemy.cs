@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    public float speed = 3f;
-    public float hitpoints = 2;
-
-    private bool facingRight = true;
-
     private MainCharacter mainCharacter;
 
     private void Start()
@@ -36,21 +31,5 @@ public class Enemy : MonoBehaviour
         {
             Flip();
         }
-    }
-
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        
-        Vector3 eulerAngles = transform.eulerAngles;
-        if (facingRight)
-        {
-            eulerAngles.y = 0f;
-        }
-        else
-        {
-            eulerAngles.y = 180f;
-        }
-        transform.eulerAngles = eulerAngles;
     }
 }
