@@ -30,10 +30,17 @@ public class ExcavationSite : MonoBehaviour
             return;
         }
 
-        Debug.Log($"ExcavationSite: меня копают");
+        // Debug.Log($"ExcavationSite: меня копают");
 
         remainingTime -= Time.fixedDeltaTime;
         TryChangeSprite();
+
+        // Раскопали до конца?
+        if (remainingTime <= 0f)
+        {
+            // Показываем инфу
+            WindowWithButtons.eventShowNextData.Invoke();
+        }
     }
 
     private void TryChangeSprite()

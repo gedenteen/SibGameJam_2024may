@@ -207,7 +207,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 900
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -283,6 +283,7 @@ MonoBehaviour:
   hitpoints: 5
   rigidbody2D: {fileID: 1957372002383505098}
   myShovel: {fileID: 1750863136736679955}
+  zombieSpawners: []
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
