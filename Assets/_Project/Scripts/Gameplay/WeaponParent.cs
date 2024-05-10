@@ -19,6 +19,8 @@ public class WeaponParent : MonoBehaviour
     private bool isAttack;
     private MainCharacter mainCharacter;
 
+    public float offset;
+
     private void Start()
     {
         mainCharacter = FindObjectOfType<MainCharacter>();
@@ -26,17 +28,27 @@ public class WeaponParent : MonoBehaviour
 
     void Update()
     {
-        Vector3 mouseposition = Input.mousePosition;
-        //mouseposition.z = Camera.main.nearClipPlane;
-        //mouseposition = Camera.main.ScreenToWorldPoint(mouseposition);
-        //Debug.Log("Mouse:" + mouseposition);
-        //Debug.Log("Player:" + (Vector2)transform.position);
+        // TODO: refactoring
 
-        //Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
-        //mousePos.z = Camera.main.nearClipPlane;
-        //Camera.main.ScreenToWorldPoint(mousePos);
+        // Получаем координаты курсора в пикселях относительно левого верхнего угла экрана
+        Vector3 cursorPositionPixels = Input.mousePosition;
 
-        Vector2 direction = (Camera.main.ScreenToWorldPoint(mouseposition) - mainCharacter.transform.position);
+        // Получаем центр экрана в пикселях
+        Vector3 screenCenterPixels = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
+
+        // Вычисляем смещение курсора относительно центра экрана
+        Vector3 cursorOffsetFromCenter = cursorPositionPixels - screenCenterPixels;
+
+        // Преобразуем пиксели в координаты экрана (-1, -1) - нижний левый угол, (1, 1) - верхний правый угол
+        Vector3 cursorPositionNormalized = new Vector3(
+            cursorOffsetFromCenter.x / (Screen.width / 2f),
+            cursorOffsetFromCenter.y / (Screen.height / 2f),
+            0
+        );
+
+        Debug.Log("Cursor position offset from center: " + cursorPositionNormalized);
+        Vector2 direction = cursorPositionNormalized;
+
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
@@ -45,11 +57,6 @@ public class WeaponParent : MonoBehaviour
         else if (direction.x > 0)
             scale.y = 1;
         transform.localScale = scale;
-
-        //if (transform.eulerAngles.z > 0 && transform.eulerAngles.z < 180)
-        //    weaponRender.sortingOrder = charRender.sortingOrder - 1;
-        //else
-        //    weaponRender.sortingOrder = charRender.sortingOrder + 1;
     }
 
     public void Attack()
