@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015a5b32c90ff874ebb261496d119ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody2d: {fileID: 4073291474162584156}
+  knockbackForce: 30
   currentHealt: 2
   maxHealth: 2
   isDead: 0
