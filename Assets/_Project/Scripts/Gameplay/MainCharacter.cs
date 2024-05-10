@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class MainCharacter : Character
 {
+    // public float speed = 7f;
+    public int maxHealth = 5;
+    public int currentHealth;
+    private bool isDead = false;
+    public int damage = 1;
+
     [Header("Links to my components")]
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private GameObject myShovel;
@@ -17,12 +23,19 @@ public class MainCharacter : Character
     private bool eventGameOverIsInvoked = false;
     private bool onExcavationSite = false;
     private ExcavationSite nearbyExcavationSite = null;
+    private WeaponParent weaponParent;
 
     private void OnValidate()
     {
         zombieSpawners = FindObjectsOfType<ZombieSpawner>();
     }
 
+
+    private void Start()
+    {
+        weaponParent = GetComponentInChildren<WeaponParent>();
+        currentHealth = maxHealth;
+    }
     private void Update()
     {
         // определяем, надо ли двигать персонажа
@@ -50,7 +63,7 @@ public class MainCharacter : Character
         }
 
         // Проверка на смерть
-        if (hitpoints <= 0 && eventGameOverIsInvoked == false)
+        if (currentHealth <= 0 && eventGameOverIsInvoked == false)
         {
             GameplayEvents.eventGameOver.Invoke();
             eventGameOverIsInvoked = true;
@@ -68,6 +81,10 @@ public class MainCharacter : Character
                 Dig(false);
             }
         }
+        moveVelocity = moveInput * speed;    
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            this.Attack();
     }
 
     private void FixedUpdate()
@@ -113,5 +130,10 @@ public class MainCharacter : Character
         {
             zombieSpawner.SetStateIsDigging(value);
         }
+    }
+
+    private void Attack()
+    {
+        weaponParent.Attack();
     }
 }

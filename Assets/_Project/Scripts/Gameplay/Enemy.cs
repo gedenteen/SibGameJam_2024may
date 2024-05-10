@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Enemy : Character
 {
+    // public float speed = 3f;
+    // public float hitpoints = 2;
+    public bool isDead = false;
+
     private MainCharacter mainCharacter;
 
     private void Start()
@@ -15,6 +19,9 @@ public class Enemy : Character
     private void FixedUpdate()
     {
         Move();
+        float distance = Vector2.Distance(transform.position, mainCharacter.transform.position);
+        if (distance < 0.8f)
+            Attack();
     }
 
     private void Move()
@@ -31,5 +38,11 @@ public class Enemy : Character
         {
             Flip();
         }
+
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attack");
     }
 }
