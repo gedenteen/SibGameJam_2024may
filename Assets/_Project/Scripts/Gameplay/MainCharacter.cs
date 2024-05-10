@@ -5,7 +5,9 @@ using UnityEngine;
 public class MainCharacter : MonoBehaviour
 {
     public float speed = 7f;
-    public int hitpoints = 5;
+    public int maxHealth = 5;
+    public int currentHealth;
+    private bool isDead = false;
     public int damage = 1;
 
     [SerializeField] private Rigidbody2D rigidbody2D;
@@ -19,20 +21,21 @@ public class MainCharacter : MonoBehaviour
     private void Start()
     {
         weaponParent = GetComponentInChildren<WeaponParent>();
+        currentHealth = maxHealth;
     }
     private void Update()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput * speed;
 
-        if (hitpoints <= 0 && eventGameOverIsInvoked == false)
+        if (currentHealth <= 0 && eventGameOverIsInvoked == false)
         {
             GameplayEvents.eventGameOver.Invoke();
             eventGameOverIsInvoked = true;
         }
         moveVelocity = moveInput * speed;    
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Space))
             this.Attack();
     }
 

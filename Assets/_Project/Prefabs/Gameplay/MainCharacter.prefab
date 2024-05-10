@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9115853642821552871}
   - component: {fileID: 3262794066538992417}
   - component: {fileID: 1902771081094990643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 376651448490203907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: 0, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.15, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,7 +151,8 @@ GameObject:
   - component: {fileID: 5410431034439857561}
   - component: {fileID: 6369278403104708615}
   - component: {fileID: 9172919209236730233}
-  m_Layer: 0
+  - component: {fileID: 3088465287264944168}
+  m_Layer: 6
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -215,9 +216,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -100650334, guid: 1321670bedb099b46a492a005b61c306, type: 3}
+  m_Sprite: {fileID: -847565667, guid: 712af8613a14d904b997b4e65539a339, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -311,9 +312,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  hitpoints: 5
+  maxHealth: 5
+  currentHealth: 0
   damage: 1
   rigidbody2D: {fileID: 5410431034439857561}
+--- !u!114 &3088465287264944168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083579927934767494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015a5b32c90ff874ebb261496d119ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealt: 0
+  maxHealth: 0
+  isDead: 0
+  OnHitReference:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathWithReference:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2597481751049226362
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85057618373159338}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -355,7 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1751847598502172524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CircleOrig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,8 +394,8 @@ Transform:
   m_GameObject: {fileID: 7258134487740204581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.135, y: 0, z: 0}
-  m_LocalScale: {x: 0.24999999, y: 0.24999999, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 466613763894758934}
@@ -387,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574774151789353080}
   - component: {fileID: 3911956811817585406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,8 +426,8 @@ Transform:
   m_GameObject: {fileID: 8527267361285074007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.121, y: 0.1295, z: 0}
-  m_LocalScale: {x: 0.14925373, y: 0.10582011, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 466613763894758934}
@@ -424,8 +447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charRender: {fileID: 0}
   weaponRender: {fileID: 0}
-  mousePos: {x: 0, y: 0, z: 0}
+  mousePos: {x: 0, y: 0}
   animator: {fileID: 3262794066538992417}
   delay: 0.3
   circleOrig: {fileID: 1751847598502172524}
-  radius: 0.64
+  radius: 0.91

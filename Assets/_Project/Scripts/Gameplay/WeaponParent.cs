@@ -6,6 +6,8 @@ using UnityEngine;
 public class WeaponParent : MonoBehaviour
 {
     public SpriteRenderer charRender, weaponRender;
+
+    //private InputActionReference pointerPosition;
     public Vector2 PointerPosition {  get; set; }
     public Vector2 mousePos;
     public Animator animator;
@@ -18,9 +20,17 @@ public class WeaponParent : MonoBehaviour
 
     void Update()
     {
-        mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        System.Console.WriteLine(mousePos);
-        Vector2 direction = (Input.mousePosition - transform.position).normalized;
+        Vector3 mouseposition = Input.mousePosition;
+        //mouseposition.z = Camera.main.nearClipPlane;
+        //mouseposition = Camera.main.ScreenToWorldPoint(mouseposition);
+        //Debug.Log("Mouse:" + mouseposition);
+        //Debug.Log("Player:" + (Vector2)transform.position);
+
+        //Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
+        //mousePos.z = Camera.main.nearClipPlane;
+        //Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direction = (mouseposition).normalized;
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
@@ -62,7 +72,12 @@ public class WeaponParent : MonoBehaviour
     {
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrig.position, radius))
         {
-            Debug.Log(collider.name);
+            //Debug.Log(collider.name);
+            Health health;
+            if (health = collider.GetComponent<Health>())
+            {
+                health.GetHit(1, transform.parent.gameObject);
+            }
         }
     }
 }
