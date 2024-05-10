@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
         float distance = Vector2.Distance(transform.position, mainCharacter.transform.position);
         if (distance < 0.8f)
             Attack();
-        //Debug.Log(Vector2.Distance(transform.position, mainCharacter.transform.position));
     }
 
     private void Move()

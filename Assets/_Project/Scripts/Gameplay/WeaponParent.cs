@@ -17,6 +17,12 @@ public class WeaponParent : MonoBehaviour
     public float radius;
 
     private bool isAttack;
+    private MainCharacter mainCharacter;
+
+    private void Start()
+    {
+        mainCharacter = FindObjectOfType<MainCharacter>();
+    }
 
     void Update()
     {
@@ -30,7 +36,7 @@ public class WeaponParent : MonoBehaviour
         //mousePos.z = Camera.main.nearClipPlane;
         //Camera.main.ScreenToWorldPoint(mousePos);
 
-        Vector2 direction = (mouseposition).normalized;
+        Vector2 direction = (Camera.main.ScreenToWorldPoint(mouseposition) - mainCharacter.transform.position);
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
