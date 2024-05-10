@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy : Character
 {
+    [SerializeField] private Animator animator;
     // public float speed = 3f;
     // public float hitpoints = 2;
     public bool isDead = false;
@@ -44,5 +45,17 @@ public class Enemy : Character
     private void Attack()
     {
         Debug.Log("Attack");
+    }
+
+    public void AnimationDie()
+    {
+        Debug.Log($"Enemy: AnimationDie");
+        animator.SetBool("death", true);
+    }
+
+    public void DestroyMyself()
+    {
+        Debug.Log($"Enemy: DestroyMyself");
+        Destroy(gameObject);
     }
 }

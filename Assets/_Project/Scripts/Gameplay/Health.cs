@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
         {
             OnDeathWithReference?.Invoke(sender);
             isDead = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

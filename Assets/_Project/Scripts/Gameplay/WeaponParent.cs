@@ -46,7 +46,7 @@ public class WeaponParent : MonoBehaviour
             0
         );
 
-        Debug.Log("Cursor position offset from center: " + cursorPositionNormalized);
+        //Debug.Log("Cursor position offset from center: " + cursorPositionNormalized);
         Vector2 direction = cursorPositionNormalized;
 
         transform.right = direction;
