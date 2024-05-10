@@ -38,6 +38,18 @@ public class MainCharacter : Character
     }
     private void Update()
     {
+        // Проверка на смерть
+        if (currentHealth <= 0)
+        {
+            if (eventGameOverIsInvoked == false)
+            {
+                animator.SetBool("death", true);
+                GameplayEvents.eventGameOver.Invoke();
+                eventGameOverIsInvoked = true;
+            }
+            return;
+        } 
+
         // определяем, надо ли двигать персонажа
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput * speed;
@@ -61,13 +73,6 @@ public class MainCharacter : Character
         {
             Flip();
         }
-
-        // Проверка на смерть
-        if (currentHealth <= 0 && eventGameOverIsInvoked == false)
-        {
-            GameplayEvents.eventGameOver.Invoke();
-            eventGameOverIsInvoked = true;
-        } 
 
         // Копаем?
         if (nearbyExcavationSite != null)
