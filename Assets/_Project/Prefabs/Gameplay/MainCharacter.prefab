@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -100650334, guid: 1321670bedb099b46a492a005b61c306, type: 3}
+  m_Sprite: {fileID: 346271873, guid: 91e3c3e38d33e2f498bc3385e6065820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -283,6 +283,7 @@ MonoBehaviour:
   hitpoints: 5
   rigidbody2D: {fileID: 1957372002383505098}
   myShovel: {fileID: 1750863136736679955}
+  animator: {fileID: 677593108687056106}
   zombieSpawners: []
 --- !u!95 &677593108687056106
 Animator:
@@ -294,7 +295,7 @@ Animator:
   m_GameObject: {fileID: 2597481751049226362}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 45d557d926b3f7f49b31c5dbfcce5139, type: 2}
+  m_Controller: {fileID: 9100000, guid: d931f8497adfb7049bd1fdeaf0983c66, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

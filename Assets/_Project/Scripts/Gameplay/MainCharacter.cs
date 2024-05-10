@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MainCharacter : Character
 {
+    [Header("Links to my components")]
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private GameObject myShovel;
+    [SerializeField] private Animator animator;
+    
+    [Header("Links to other objects")]
     [SerializeField] private ZombieSpawner[] zombieSpawners;
     
     private Vector2 moveInput;
@@ -21,15 +25,38 @@ public class MainCharacter : Character
 
     private void Update()
     {
+        // определяем, надо ли двигать персонажа
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput * speed;
 
+        // Изменение анимации
+        if (moveVelocity != Vector2.zero)
+        {
+            animator.SetBool("running", true);
+        }
+        else
+        {
+            animator.SetBool("running", false);
+        }
+
+        // Проверка на поворот персонажа
+        if (!facingRight && moveVelocity.x > 0)
+        {
+            Flip();
+        }
+        else if (facingRight && moveVelocity.x < 0)
+        {
+            Flip();
+        }
+
+        // Проверка на смерть
         if (hitpoints <= 0 && eventGameOverIsInvoked == false)
         {
             GameplayEvents.eventGameOver.Invoke();
             eventGameOverIsInvoked = true;
         } 
 
+        // Копаем?
         if (nearbyExcavationSite != null)
         {
             if (onExcavationSite && Input.GetKey(KeyCode.F))
