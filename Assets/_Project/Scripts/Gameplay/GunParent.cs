@@ -16,7 +16,7 @@ public class GunParent : MonoBehaviour
     private float reloadRate = 0f;
 
     private Vector2 direction;
-    private int bulletMaxCount = 3;
+    private int bulletMaxCount = 5;
     private int bulletCurrentCount;
 
     void Start()
@@ -26,16 +26,16 @@ public class GunParent : MonoBehaviour
 
     void Update()
     {
-        // Получаем координаты курсора в пикселях относительно левого верхнего угла экрана
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 cursorPositionPixels = Input.mousePosition;
 
-        // Получаем центр экрана в пикселях
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 screenCenterPixels = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
 
-        // Вычисляем смещение курсора относительно центра экрана
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 cursorOffsetFromCenter = cursorPositionPixels - screenCenterPixels;
 
-        // Преобразуем пиксели в координаты экрана (-1, -1) - нижний левый угол, (1, 1) - верхний правый угол
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (-1, -1) - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, (1, 1) - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         Vector3 cursorPositionNormalized = new Vector3(
             cursorOffsetFromCenter.x / (Screen.width / 2f),
             cursorOffsetFromCenter.y / (Screen.height / 2f),
@@ -62,13 +62,13 @@ public class GunParent : MonoBehaviour
         {
             if (fireRate <= 0f)
             {
-                // Вычисляем направление и расстояние между startPos и endPos
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ startPos пїЅ endPos
                 Vector3 direction = (firingPoint.position - startPoint.position).normalized;
                 float distance = Vector3.Distance(startPoint.position, firingPoint.position);
 
-                // Создаем пулю с учетом этого направления
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 GameObject bullet = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-                // Двигаем пулю в направлении endPos
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ endPos
                 bullet.GetComponent<Rigidbody2D>().velocity = direction * 10f;
 
 
