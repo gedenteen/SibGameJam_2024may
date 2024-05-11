@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: {fileID: 7967828931832417265}
-  animator: {fileID: 0}
+  animator: {fileID: 5228561912287409080}
   startPoint: {fileID: 2579657866311866142}
-  bulletPrefab: {fileID: 7921537527481305280, guid: c26aaba262731ac448e501b9e3a84961, type: 3}
+  bulletPrefab: {fileID: 8850796244121555250, guid: c26aaba262731ac448e501b9e3a84961, type: 3}
   firingPoint: {fileID: 6705317758151778323}

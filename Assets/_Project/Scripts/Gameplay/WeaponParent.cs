@@ -112,16 +112,16 @@ public class WeaponParent : MonoBehaviour
 
     public void DetectCollider()
     {
-        //Debug.Log($"WeaponParent: DetectCollider: begin");
+        Debug.Log($"WeaponParent: DetectCollider: begin");
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrig.position, radius))
         {
-            //Debug.Log($"WeaponParent: DetectCollider: collider.name={collider.name}");
+            Debug.Log($"WeaponParent: DetectCollider: collider.name={collider.name}");
             Health health;
             if (health = collider.GetComponent<Health>())
             {
                 health.GetHit(1, transform.parent.gameObject);
             }
-            //Debug.Log($"WeaponParent: DetectCollider: health={health}");
+            Debug.Log($"WeaponParent: DetectCollider: health={health}");
         }
     }
 }

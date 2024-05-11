@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4351333424772537107}
-  - component: {fileID: 8995574000344910229}
+  - component: {fileID: 1704630629773562822}
   m_Layer: 6
   m_Name: WeaponParent
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   - {fileID: 5540838919526124925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8995574000344910229
+--- !u!114 &1704630629773562822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,19 +73,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4380398690979753788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce89e9473f4483418b324efed600469, type: 3}
+  m_Script: {fileID: 11500000, guid: fcbea4ee37b52834b8e41f138b54801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canRotateWeapon: 0
-  charRender: {fileID: 0}
-  weaponRender: {fileID: 0}
-  mousePos: {x: 0, y: 0}
-  animator: {fileID: 7483708179722653770}
-  delay: 0.3
-  circleOrig: {fileID: 5968233782410810375}
-  radius: 0.91
-  offset: 0
   delayBeforeAttack: 0.2
+  delayBeforeFinishAttack: 0.3
+  charRender: {fileID: 0}
+  weaponRender: {fileID: 3755643158350170508}
+  animator: {fileID: 7483708179722653770}
+  circleOrig: {fileID: 5968233782410810375}
+  mousePos: {x: 0, y: 0}
+  offset: 0
+  radius: 0
 --- !u!1 &5739450034880501864
 GameObject:
   m_ObjectHideFlags: 0
