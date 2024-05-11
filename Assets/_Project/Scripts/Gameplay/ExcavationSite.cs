@@ -10,6 +10,7 @@ public class ExcavationSite : MonoBehaviour
     [SerializeField] private SpriteRenderer targetSpriteRenderer;
     [SerializeField] private float remainingTime;
     [SerializeField] private float[] timers;
+    [SerializeField] private bool isExcavated = false; // раскопано до конца?
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class ExcavationSite : MonoBehaviour
         {
             timers[i] = (countOfSprites - i - 1) * initialTime / countOfSprites;
         }
+
+        ExcavationSitesCounter.Instance.Add(this);
     }
 
     private void FixedUpdate()
@@ -40,12 +43,20 @@ public class ExcavationSite : MonoBehaviour
         {
             // Показываем инфу
             WindowWithButtons.eventShowNextData.Invoke();
+            isExcavated = true;
+            ExcavationSitesCounter.Instance.Remove(this);
+
+            // Если это последняя яма на уровне, тогда показываем последний спрайт
+            if (ExcavationSitesCounter.Instance.countOfNotExcavatedSites == 0)
+            {
+                targetSpriteRenderer.sprite = sprites[sprites.Count - 1];
+            }
         }
     }
 
     private void TryChangeSprite()
     {
-        for (int i = 0; i < timers.Length; i++)
+        for (int i = 0; i < timers.Length - 1; i++) // АХТУНГ: тут -1
         {
             if (remainingTime >= timers[i])
             {

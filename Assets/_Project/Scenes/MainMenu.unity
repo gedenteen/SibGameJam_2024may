@@ -2370,6 +2370,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1185082509}
+  - {fileID: 1987416136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1458143398
@@ -3152,13 +3153,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1791655396}
     m_Modifications:
     - target: {fileID: 1320334699155829230, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: listWithData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: listWithData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3880362584344984cb4a8308f2662e7e, type: 2}
     - target: {fileID: 1320334699155829230, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
       propertyPath: listWithData.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 72b33c07b9e1ea743ab897927af6e094, type: 2}
+      objectReference: {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
     - target: {fileID: 2254125024969928690, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
       propertyPath: m_Name
       value: WindowWithButtons
@@ -3241,26 +3242,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571867797385506869, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126533209583013350, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126533209583013350, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126533209583013350, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126533209583013350, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563319086879759312, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4140,6 +4121,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1987416135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987416136}
+  - component: {fileID: 1987416137}
+  m_Layer: 0
+  m_Name: ExcavationSitesCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987416136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987416135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1458143397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987416137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987416135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef0292c2fd5ad14ab65b7a835f5c845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2037755624
