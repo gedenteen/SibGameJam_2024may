@@ -15,7 +15,7 @@ public class GunParent : MonoBehaviour
 
     private Vector2 direction;
     private Vector2 mousePosition;
-    private int bulletMaxCount = 7;
+    private int bulletMaxCount = 3;
     private int bulletCurrentCount;
 
     void Start()
@@ -25,50 +25,17 @@ public class GunParent : MonoBehaviour
 
     void Update()
     {
-        // Получаем координаты курсора в пикселях относительно левого верхнего угла экрана
         Vector3 cursorPositionPixels = Input.mousePosition;
-
-        // Получаем центр экрана в пикселях
         Vector3 screenCenterPixels = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
-
-        // Вычисляем смещение курсора относительно центра экрана
         Vector3 cursorOffsetFromCenter = cursorPositionPixels - screenCenterPixels;
-
-        // Преобразуем пиксели в координаты экрана (-1, -1) - нижний левый угол, (1, 1) - верхний правый угол
         Vector3 cursorPositionNormalized = new Vector3(
             cursorOffsetFromCenter.x / (Screen.width / 2f),
             cursorOffsetFromCenter.y / (Screen.height / 2f),
             0
         );
+        float angle = Mathf.Atan2(cursorOffsetFromCenter.y - transform.position.y, cursorOffsetFromCenter.x - transform.position.x) * Mathf.Rad2Deg - 40f;
 
-        Vector2 direction = cursorPositionNormalized;
-
-        transform.right = direction;
-
-        //Vector2 scale = transform.localScale;
-        //Vector3 firePointScale = firingPoint.localScale;
-        //if (direction.x < 0)
-        //{
-        //    scale.y = -1;
-        //    firePointScale.y *= -1;
-        //    firePointScale.x *= -1;
-        //    firingPoint.rotation.Set(firingPoint.rotation.x, firingPoint.rotation.y, firingPoint.rotation.z-300, firingPoint.rotation.w);
-        //}    
-        //else if (direction.x > 0)
-        //{
-        //    scale.y = 1;
-        //    firePointScale.y *= 1;
-        //    firePointScale.x *= 1;
-        //    firingPoint.rotation.Set(firingPoint.rotation.x, firingPoint.rotation.y, firingPoint.rotation.z + 300, firingPoint.rotation.w);
-        //}
-        //transform.localScale = scale;
-        //firingPoint.localScale.Set(firePointScale.x, firePointScale.y, firePointScale.z);
-
-        //Vector3 mouse_pos = Input.mousePosition;
-        //mouse_pos.z = -20;
-        //Vector3 object_pos = Camera.main.WorldToScreenPoint(firingPoint.position);
-        //Quaternion mouse = Quaternion.Euler(0, 0, Mathf.Atan2(mouse_pos.y - object_pos.y, mouse_pos.x - object_pos.x) * Mathf.Rad2Deg);
-        //transform.rotation = mouse;
+        transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void Shoot()
