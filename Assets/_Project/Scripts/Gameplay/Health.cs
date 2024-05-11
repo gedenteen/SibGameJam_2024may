@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,39 @@ public class Health : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     public float knockbackForce = 10f; // Сила отброса
 
-    [SerializeField]
+    [Header("Changeable")]
     public int currentHealt = 5;
-    // , maxHealth;
+    public int maxHealth = 5;
+    public bool regen = false;
+    public float delayBeforeRegen = 5f;
 
     [SerializeField]
     private bool isDead;
 
     public UnityEvent<GameObject> OnHitReference, OnDeathWithReference;
+
+    private float timerForRegen = 0f;
+
+    private void Awake()
+    {
+        timerForRegen = delayBeforeRegen;
+    }
+
+    public void Update()
+    {
+        if (regen)
+        {
+            if (timerForRegen > 0f)
+            {
+                timerForRegen -= Time.deltaTime;
+            }
+            else if (timerForRegen <= 0f)
+            {
+                currentHealt = Math.Clamp(currentHealt + 1, 1, maxHealth);
+                timerForRegen = delayBeforeRegen;
+            }
+        }
+    }
 
     public void InitializeHealth(int health)
     {

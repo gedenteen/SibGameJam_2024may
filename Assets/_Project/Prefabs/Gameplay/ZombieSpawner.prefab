@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEnemy: {fileID: 2171145226033190470, guid: bf242212cb184ac43891e9a54709b793, type: 3}
-  timeForSpawn: 3
+  timeForSpawn: 4
   isDigging: 0

@@ -287,8 +287,7 @@ MonoBehaviour:
   myShovel: {fileID: 1750863136736679955}
   animator: {fileID: 677593108687056106}
   health: {fileID: 5070574181015777725}
-  zombieSpawners:
-  - {fileID: 0}
+  zombieSpawners: []
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
@@ -325,6 +324,9 @@ MonoBehaviour:
   rigidbody2d: {fileID: 1957372002383505098}
   knockbackForce: 10
   currentHealt: 5
+  maxHealth: 5
+  regen: 1
+  delayBeforeRegen: 20
   isDead: 0
   OnHitReference:
     m_PersistentCalls:
