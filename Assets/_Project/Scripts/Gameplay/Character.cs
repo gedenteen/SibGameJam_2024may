@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float speed = 3f;
-    public int hitpoints = 2;
+    // public int hitpoints = 2;
 
     protected bool facingRight = true;
 
