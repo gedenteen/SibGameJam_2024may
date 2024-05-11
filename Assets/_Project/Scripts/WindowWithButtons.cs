@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class WindowWithButtons : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class WindowWithButtons : MonoBehaviour
     private void Awake()
     {
         eventShowNextData.AddListener(ShowNextData);
+
+        foreach (Button button in myButtons)
+        {
+            button.onClick.AddListener(() => Activate(false));
+        }
     }
 
     private void ShowNextData()
@@ -54,6 +60,11 @@ public class WindowWithButtons : MonoBehaviour
         {
             myButtons[i].gameObject.SetActive(true);
             textOfMyButtons[i].text = data.textForButtons[i];
+
+            if (data.goToNextScene)
+            {
+                myButtons[i].onClick.AddListener(LoadNextScene);
+            }
         }
 
         // Выключаем остальные кнопки 
@@ -97,5 +108,16 @@ public class WindowWithButtons : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha; // Убедимся, что альфа принимает точное значение в конце.
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        foreach (Button button in myButtons)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => Activate(false));
+        }
     }
 }
