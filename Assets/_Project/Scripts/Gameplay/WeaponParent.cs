@@ -55,7 +55,7 @@ public class WeaponParent : MonoBehaviour
             0
         );
 
-        //Debug.Log("Cursor position offset from center: " + cursorPositionNormalized);
+        ////Debug.Log("Cursor position offset from center: " + cursorPositionNormalized);
         Vector2 direction = cursorPositionNormalized;
 
         transform.right = direction;
@@ -116,7 +116,6 @@ public class WeaponParent : MonoBehaviour
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrig.position, radius))
         {
             //Debug.Log($"WeaponParent: DetectCollider: collider.name={collider.name}");
-            //Debug.Log(collider.name);
             Health health;
             if (health = collider.GetComponent<Health>())
             {

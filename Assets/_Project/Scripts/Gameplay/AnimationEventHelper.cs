@@ -16,4 +16,9 @@ public class AnimationEventHelper : MonoBehaviour
     {
         OnAttackPerfomed?.Invoke();
     }
+
+    public void TriggerReload()
+    {
+        OnAnimationEventTriggered?.Invoke();
+    }
 }
