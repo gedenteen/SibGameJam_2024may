@@ -9,6 +9,7 @@ public class WeaponParent : MonoBehaviour
     [SerializeField] private bool canRotateWeapon = false;
     [SerializeField] private float delayBeforeAttack = 0.2f;
     [SerializeField] private float delayBeforeFinishAttack = 0.3f;
+    public float radius = 0.91f;
 
     [Header("Links to objects")]
     public SpriteRenderer charRender, weaponRender;
@@ -20,7 +21,6 @@ public class WeaponParent : MonoBehaviour
     public Vector2 PointerPosition {  get; set; }
     public float offset;
 
-    public float radius;
     private bool isAttack;
     private MainCharacter mainCharacter;
 

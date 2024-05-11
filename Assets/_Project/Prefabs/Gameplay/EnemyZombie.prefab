@@ -245,6 +245,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3448151416710580216}
     m_Modifications:
     - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: radius
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: charRender
       value: 
       objectReference: {fileID: 541939889599393149}
