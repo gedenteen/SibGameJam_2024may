@@ -24,6 +24,7 @@ public class MainCharacter : Character
     private bool onExcavationSite = false;
     private ExcavationSite nearbyExcavationSite = null;
     private WeaponParent weaponParent;
+    private GunParent gunParent;
 
     private void OnValidate()
     {
@@ -34,6 +35,7 @@ public class MainCharacter : Character
     private void Start()
     {
         weaponParent = GetComponentInChildren<WeaponParent>();
+        gunParent = GetComponentInChildren<GunParent>();
         currentHealth = maxHealth;
     }
     private void Update()
@@ -85,6 +87,10 @@ public class MainCharacter : Character
 
         if (Input.GetKeyDown(KeyCode.Space))
             this.Attack();
+        if (Input.GetMouseButtonDown(1))
+            this.Shoot();
+        if (Input.GetKeyDown(KeyCode.R))
+            this.Reload();
     }
 
     private void FixedUpdate()
@@ -132,8 +138,9 @@ public class MainCharacter : Character
         }
     }
 
-    private void Attack()
-    {
-        weaponParent.Attack();
-    }
+    private void Attack()   { weaponParent.Attack(); }
+
+    private void Shoot()    { gunParent.Shoot(); }
+
+    private void Reload() { gunParent.Reload(); }
 }
