@@ -28,8 +28,14 @@ public class WeaponParent : MonoBehaviour
 
     void Update()
     {
-        // TODO: refactoring
+        if (isAttack)
+        {
+            RotateWeapon();
+        }
+    }
 
+    private void RotateWeapon()
+    {
         // Получаем координаты курсора в пикселях относительно левого верхнего угла экрана
         Vector3 cursorPositionPixels = Input.mousePosition;
 
@@ -63,6 +69,7 @@ public class WeaponParent : MonoBehaviour
     {
         if (isAttack) 
             return;
+        weaponRender.gameObject.SetActive(true);
         animator.SetTrigger("Attack");
         isAttack = true;
         StartCoroutine(DelayAttack());
@@ -72,6 +79,7 @@ public class WeaponParent : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         isAttack = false;
+        weaponRender.gameObject.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()

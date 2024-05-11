@@ -65,6 +65,7 @@ public class Enemy : Character
     public void AnimationDie()
     {
         Debug.Log($"Enemy: AnimationDie");
+        speed = 0f;
         animator.SetBool("death", true);
     }
 
