@@ -3152,14 +3152,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1791655396}
     m_Modifications:
-    - target: {fileID: 1320334699155829230, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: listWithData.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3880362584344984cb4a8308f2662e7e, type: 2}
-    - target: {fileID: 1320334699155829230, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
-      propertyPath: listWithData.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
     - target: {fileID: 2254125024969928690, guid: 2cf7b75b825ac4c409069a2f1447ecfd, type: 3}
       propertyPath: m_Name
       value: WindowWithButtons

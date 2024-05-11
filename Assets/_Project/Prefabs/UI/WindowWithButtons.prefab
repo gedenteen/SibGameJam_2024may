@@ -62,8 +62,8 @@ MonoBehaviour:
   - {fileID: 4015569253180602638}
   - {fileID: 5230344987117000913}
   listWithData:
-  - {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
   - {fileID: 11400000, guid: 3880362584344984cb4a8308f2662e7e, type: 2}
+  - {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
   - {fileID: 11400000, guid: 72b33c07b9e1ea743ab897927af6e094, type: 2}
 --- !u!1 &4268334596062947279
 GameObject:
