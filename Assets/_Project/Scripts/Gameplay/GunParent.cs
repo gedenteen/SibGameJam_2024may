@@ -9,9 +9,11 @@ public class GunParent : MonoBehaviour
     public Transform Gun;
     public Animator animator;
     [SerializeField] public Transform startPoint;
-
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+
+    [SerializeField] private AudioClip shootSound;
+
     private float fireRate = 0f;
     private float reloadRate = 0f;
 
@@ -53,11 +55,14 @@ public class GunParent : MonoBehaviour
         else if (direction.x > 0)
             scale.y = 1;
         transform.localScale = scale;
+
+        float timerOut = Time.deltaTime;
+        fireRate -= timerOut;
+        reloadRate -= timerOut;
     }
 
     public void Shoot()    
     {
-        float timerOut = Time.deltaTime * 10;
         if (bulletCurrentCount > 0 && reloadRate <= 0f)
         {
             if (fireRate <= 0f)
@@ -72,25 +77,19 @@ public class GunParent : MonoBehaviour
                 bullet.GetComponent<Rigidbody2D>().velocity = direction * 10f;
 
 
+                SoundManager.instance.PlaySound(shootSound, transform, 0.5f);
+
                 //Instantiate(bulletPrefab, firingPoint.position, Quaternion.Euler(0, 0, angle));
                 bulletCurrentCount--;
-                fireRate = 0.02f;
+                fireRate = 0.2f;
             }
-            else
-            {
-                fireRate -= timerOut;
-            }
-        }
-        else 
-        { 
-            reloadRate -= timerOut;
-        }   
+        }  
     }
 
     public void Reload()
     {
         bulletCurrentCount = bulletMaxCount;
-        reloadRate = 0.02f;
+        reloadRate = 0.6f;
         animator.SetTrigger("Reload");
     }
 }

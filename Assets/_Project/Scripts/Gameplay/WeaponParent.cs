@@ -9,6 +9,7 @@ public class WeaponParent : MonoBehaviour
     [SerializeField] private bool canRotateWeapon = false;
     [SerializeField] private float delayBeforeAttack = 0.2f;
     [SerializeField] private float delayBeforeFinishAttack = 0.3f;
+    [SerializeField] private AudioClip attackSound;
     public float radius = 0.91f;
 
     [Header("Links to objects")]
@@ -73,6 +74,8 @@ public class WeaponParent : MonoBehaviour
         if (isAttack) 
             return;
         isAttack = true;
+
+        SoundManager.instance.PlaySound(attackSound, transform, 0.5f);
 
         StartCoroutine(DoAttackWithDelay(delayBeforeAttack));
     }

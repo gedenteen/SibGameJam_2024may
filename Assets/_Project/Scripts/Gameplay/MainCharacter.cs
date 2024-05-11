@@ -11,6 +11,8 @@ public class MainCharacter : Character
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private GameObject myShovel;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip digSound;
+    
     public Health health;
     
     [Header("Links to other objects")]
@@ -135,6 +137,9 @@ public class MainCharacter : Character
     {
         myShovel.SetActive(value);
         nearbyExcavationSite.SetStateIsDigging(value);
+
+        SoundManager.instance.PlaySound(digSound, transform, 0.5f);
+
         foreach (ZombieSpawner zombieSpawner in zombieSpawners)
         {
             zombieSpawner.SetStateIsDigging(value);

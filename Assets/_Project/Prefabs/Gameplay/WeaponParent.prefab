@@ -79,13 +79,14 @@ MonoBehaviour:
   canRotateWeapon: 0
   delayBeforeAttack: 0.2
   delayBeforeFinishAttack: 0.3
+  shovelSound: {fileID: 8300000, guid: e33191be8c2b5f24893b6a082a90932b, type: 3}
+  radius: 0
   charRender: {fileID: 0}
   weaponRender: {fileID: 3755643158350170508}
   animator: {fileID: 7483708179722653770}
   circleOrig: {fileID: 5968233782410810375}
   mousePos: {x: 0, y: 0}
   offset: 0
-  radius: 0
 --- !u!1 &5739450034880501864
 GameObject:
   m_ObjectHideFlags: 0
