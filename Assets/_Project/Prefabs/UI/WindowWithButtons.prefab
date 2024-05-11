@@ -63,13 +63,32 @@ MonoBehaviour:
   - {fileID: 5230344987117000913}
   listWithData:
   - {fileID: 11400000, guid: 3880362584344984cb4a8308f2662e7e, type: 2}
-  - {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
+  - {fileID: 11400000, guid: 71537827786f99e41ac28296a7cf0d95, type: 2}
   - {fileID: 11400000, guid: 72b33c07b9e1ea743ab897927af6e094, type: 2}
   - {fileID: 11400000, guid: 6ceb1cbd85fd75342863f83def5cc645, type: 2}
   - {fileID: 11400000, guid: 14eda49876f02c64c8408f39048fd9cc, type: 2}
   - {fileID: 11400000, guid: df0608d055c7693419993463a73033d8, type: 2}
   - {fileID: 11400000, guid: b4762a0ab05be0149a6e535b425307df, type: 2}
-  - {fileID: 11400000, guid: 72b33c07b9e1ea743ab897927af6e094, type: 2}
+  - {fileID: 11400000, guid: 7a7373229c3faea499c7003fa74a02e4, type: 2}
+  - {fileID: 11400000, guid: 1add4461858d4f442a8afefdeaebaae2, type: 2}
+  - {fileID: 11400000, guid: 4957b9f45966c534c8961fe87b3c1b97, type: 2}
+  - {fileID: 11400000, guid: 7a7373229c3faea499c7003fa74a02e4, type: 2}
+  - {fileID: 11400000, guid: c8ba9262e6003ca409dd928cd46cfafc, type: 2}
+  - {fileID: 11400000, guid: 1add4461858d4f442a8afefdeaebaae2, type: 2}
+  - {fileID: 11400000, guid: 8b165d7685819af46a54b653b067c075, type: 2}
+  - {fileID: 11400000, guid: 1255296d8194413478909b28ccd0b286, type: 2}
+  - {fileID: 11400000, guid: 590bf04110c5b28419fc62e47d66ddfb, type: 2}
+  - {fileID: 11400000, guid: 86c93cecd6c144140b5297c865a22338, type: 2}
+  - {fileID: 11400000, guid: 025a907ac04e58b45b25f77349c5fe7f, type: 2}
+  - {fileID: 11400000, guid: de04e806752c2284288efedcedae844e, type: 2}
+  - {fileID: 11400000, guid: 31088db2a5cb9e045ab7de5611fb3105, type: 2}
+  - {fileID: 11400000, guid: 85793a1d2d93daf4f95ad3a49e495aed, type: 2}
+  - {fileID: 11400000, guid: 2f3ce607e68eb1c448c78063c20f9f35, type: 2}
+  - {fileID: 11400000, guid: 1bd7d376ce5b19e4190dc0b81f60acef, type: 2}
+  - {fileID: 11400000, guid: 0dab50fcc8891064aacc45a05629e841, type: 2}
+  - {fileID: 11400000, guid: 7d54c9af4967edb4093d36d906d1b966, type: 2}
+  - {fileID: 11400000, guid: ff2ff0c511619284abb1c079ee04a485, type: 2}
+  - {fileID: 11400000, guid: dca94fccfb3523b4cbdb2e45143f0803, type: 2}
 --- !u!1 &4268334596062947279
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5006718629756768930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -242,10 +261,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3178321121866723092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -37.341675}
-  m_SizeDelta: {x: 1100, y: 274.6833}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -52.962524}
+  m_SizeDelta: {x: -100, y: 305.925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7077366319201538291
 CanvasRenderer:
@@ -275,19 +294,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0425\u043C, \u0447\u0442\u043E \u044D\u0442\u043E \u0437\u0430 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E?
-    \u0422\u0443\u0442 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u043E
-    \u0435\u0441\u0442\u044C \u043A\u043D\u043E\u043F\u043A\u0438 \u0438 \u044D\u043A\u0440\u0430\u043D...
-    \u041D\u0430\u0434\u043F\u0438\u0441\u044C \"Nokia\"... \u042F \u0443\u0437\u043D\u0430\u044E
-    \u044D\u0442\u0438 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F
-    \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0430\u0445, \u044D\u0442\u043E \u0436\u0435
-    \u0442\u0435\u043B\u0435\u0444\u043E\u043D! \u041E\u043D \u0447\u0442\u043E,
-    \u0435\u0449\u0435 \u0438 \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442?!
-    \u0423\u043C\u0435\u043B\u0438 \u0436\u0435 \u0440\u0430\u043D\u044C\u0448\u0435
-    \u0434\u0435\u043B\u0430\u0442\u044C \u0432\u0435\u0449\u0438 \u043D\u0430\u0432\u0435\u043A\u0430.
-    \u041B\u0430\u0434\u043D\u043E, \u0438\u0437\u0443\u0447\u0443 \u0435\u0433\u043E
-    \u043F\u043E\u0442\u043E\u043C, \u0441\u0435\u0447\u0430\u0441 \u043D\u0430\u0434\u043E
-    \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u043F\u043E\u0438\u0441\u043A\u0438."
+  m_text: "\"\u041A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0435
+    \u0441\u0438\u043B\u044C\u043D\u043E\u0435. \u0427\u0443\u0432\u0441\u0442\u0432\u0443\u044E,
+    \u043A\u0430\u043A \u0442\u0435\u0440\u044F\u044E \u0441\u043E\u0437\u043D\u0430\u043D\u0438\u0435.
+    \u041D\u043E \u0445\u043E\u0447\u0443 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C
+    \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0441\u0432\u043E\u0435
+    \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435. \u0412\u0434\u0440\u0443\u0433
+    \u0435\u0433\u043E \u043D\u0430\u0439\u0434\u0435\u0442 \u043A\u0430\u043A\u043E\u0439-\u043D\u0438\u0431\u0443\u0434\u044C
+    \u0430\u0440\u0445\u0435\u043E\u043B\u043E\u0433. \u041D\u0430\u0448\u0435\u043C\u0443
+    \u043C\u0438\u0440\u0443 \u043F\u0440\u0438\u0448\u0435\u043B \u043A\u043E\u043D\u0435\u0446.
+    \u041C\u044B, \u043E\u0442\u043A\u0440\u043E\u0432\u0435\u043D\u043D\u043E \u0433\u043E\u0432\u043E\u0440\u044F,
+    \u0432\u0441\u0435\u2026 \u0417\u0430\u043D\u0438\u043C\u0430\u043B\u0438\u0441\u044C
+    \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C\u0438 \u0436\u0438\u0437\u043D\u044F\u043C\u0438.
+    \u041D\u0435 \u0432\u0438\u0434\u0435\u043B\u0438 \u0434\u0430\u043B\u044C\u0448\u0435
+    \u0441\u0432\u043E\u0435\u0433\u043E \u043D\u043E\u0441\u0430. \u0410 \u043D\u0443\u0436\u043D\u043E
+    \u0431\u044B\u043B\u043E \u0432\u0441\u0435\u0433\u043E \u043B\u0438\u0448\u044C
+    \u043F\u0440\u043E\u044F\u0432\u043B\u044F\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435
+    \u043B\u044E\u0431\u0432\u0438 \u043A \u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0438\u043C,
+    \u043D\u0430\u0432\u0435\u0440\u043D\u043E\u0435. \u041A \u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0435\u043C\u0443
+    \u043D\u0430\u0441 \u043C\u0438\u0440\u0443! \u041F\u043E\u044D\u0442\u043E\u043C\u0443
+    \u0431\u0435\u0440\u0435\u0433\u0438 \u0441\u0435\u0431\u044F \u0438 \u0441\u0432\u043E\u0438\u0445
+    \u0431\u043B\u0438\u0437\u043A\u0438\u0445\u2026\r\n\r\n \u0410 \u0442\u0435\u043F\u0435\u0440\u044C
+    \u043C\u043E\u0439 \u043F\u0440\u044B\u0436\u043E\u043A \u0432 \u043D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u043E\u0441\u0442\u044C! 
+    \u0410\u043D\u0434\u0440\u0435\u0439 \u041C.\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4ccb63aee39eb3439621f11878ad458, type: 2}
   m_sharedMaterial: {fileID: -7988874499889326394, guid: a4ccb63aee39eb3439621f11878ad458, type: 2}
@@ -314,12 +343,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 23.45
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -717,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_AnchorMin.x
@@ -725,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_SizeDelta.x
@@ -765,11 +794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 6122856558767818245, guid: f588bbcaf74f33947bf672278a9b9c57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

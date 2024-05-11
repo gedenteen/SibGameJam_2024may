@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dde560598c81d45914bb8660568d5f, type: 3}
+  m_Name: DataForWWB_letter9
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 1d249aefa13c7584181b9be871a78fc4, type: 3}
+  showSprite: 1
+  mainText: "\"\u0412\u0421\u0415 \u0421\u0414\u041E\u0425\u041B\u0418. \u0422\u0420\u0410\u0412\u0410\u041D\u0423\u041B\u0418\u0421\u042C
+    \u041D\u0410\u0421\u0422\u041E\u0419\u041A\u041E\u0419 \u0421\u0410\u041D\u042B\u0427\u0410.\""
+  textForButtons:
+  - "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  goToNextScene: 0
