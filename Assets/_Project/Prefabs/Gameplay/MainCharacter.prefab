@@ -411,7 +411,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: radius
-      value: 0.91
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: canRotateWeapon
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4351333424772537107, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.048166186
       objectReference: {fileID: 0}
     - target: {fileID: 4351333424772537107, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: m_LocalPosition.y
