@@ -22,17 +22,17 @@ public class HealthUi : MonoBehaviour
             return;
         }
 
-        if (createdHearts.Count < mainCharacter.currentHealth)
+        if (createdHearts.Count < mainCharacter.health.currentHealt)
         {
-            for (int i = createdHearts.Count; i < mainCharacter.currentHealth; i++)
+            for (int i = createdHearts.Count; i < mainCharacter.health.currentHealt; i++)
             {
                 GameObject goHearth = Instantiate(prefabHearth, transform);
                 createdHearts.Add(goHearth);
             }
         }
-        else if (createdHearts.Count > mainCharacter.currentHealth)
+        else if (createdHearts.Count > mainCharacter.health.currentHealt)
         {
-            for (int i = mainCharacter.currentHealth; i < createdHearts.Count; i++)
+            for (int i = mainCharacter.health.currentHealt; i < createdHearts.Count; i++)
             {
                 Destroy(createdHearts[i]);
                 createdHearts.Remove(createdHearts[i]);

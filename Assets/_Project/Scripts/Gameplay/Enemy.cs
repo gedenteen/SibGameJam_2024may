@@ -6,13 +6,14 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private WeaponParent weaponParent;
     public bool isDead = false;
 
     private MainCharacter mainCharacter;
 
     private void Awake()
     {
-        Debug.Log($"Enemy: Awake: EnemyCounter.Instance={EnemyCounter.Instance}");
+        // Debug.Log($"Enemy: Awake: EnemyCounter.Instance={EnemyCounter.Instance}");
         if (EnemyCounter.Instance != null)
         {
             EnemyCounter.Instance.AddEnemy(this);
@@ -27,8 +28,10 @@ public class Enemy : Character
     private void FixedUpdate()
     {
         Move();
+
         float distance = Vector2.Distance(transform.position, mainCharacter.transform.position);
-        if (distance < 0.8f)
+        // Debug.Log($"Enemy: FixedUpdate: distance={distance}");
+        if (distance < 1f)
             Attack();
     }
 
@@ -59,7 +62,9 @@ public class Enemy : Character
 
     private void Attack()
     {
-        Debug.Log("Attack");
+        // Debug.Log("Enemy: Attack");
+        // animator.SetBool("attack", true);
+        weaponParent.TryAttack();
     }
 
     public void AnimationDie()

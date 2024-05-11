@@ -21,6 +21,8 @@ public class WeaponParent : MonoBehaviour
 
     public float offset;
 
+    [SerializeField] private float delayBeforeAttack = 0.2f;
+
     private void Start()
     {
         mainCharacter = FindObjectOfType<MainCharacter>();
@@ -65,21 +67,23 @@ public class WeaponParent : MonoBehaviour
         transform.localScale = scale;
     }
 
-    public void Attack()
+    public void TryAttack()
     {
         if (isAttack) 
             return;
-        weaponRender.gameObject.SetActive(true);
-        animator.SetTrigger("Attack");
         isAttack = true;
-        StartCoroutine(DelayAttack());
+
+        StartCoroutine(DoAttackWithDelay(delayBeforeAttack));
     }
 
-    private IEnumerator DelayAttack()
+    private IEnumerator FinishAttack()
     {
         yield return new WaitForSeconds(delay);
         isAttack = false;
-        weaponRender.gameObject.SetActive(false);
+        if (weaponRender != null)
+        {
+            weaponRender.gameObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -89,16 +93,35 @@ public class WeaponParent : MonoBehaviour
         Gizmos.DrawWireSphere(position, radius);
     }
 
+    private IEnumerator DoAttackWithDelay(float delay)
+    {
+        if (delay != 0f)
+        {
+            yield return new WaitForSeconds(delay);
+        }
+
+        if (weaponRender != null)
+        {
+            weaponRender.gameObject.SetActive(true);
+        }
+        animator.SetTrigger("Attack");
+        DetectCollider();
+        StartCoroutine(FinishAttack());
+    }
+
     public void DetectCollider()
     {
+        //Debug.Log($"WeaponParent: DetectCollider: begin");
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrig.position, radius))
         {
+            //Debug.Log($"WeaponParent: DetectCollider: collider.name={collider.name}");
             //Debug.Log(collider.name);
             Health health;
             if (health = collider.GetComponent<Health>())
             {
                 health.GetHit(1, transform.parent.gameObject);
             }
+            //Debug.Log($"WeaponParent: DetectCollider: health={health}");
         }
     }
 }

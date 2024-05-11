@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MainCharacter : Character
 {
-    // public float speed = 7f;
-    public int maxHealth = 5;
-    public int currentHealth;
     private bool isDead = false;
     public int damage = 1;
 
@@ -14,6 +11,7 @@ public class MainCharacter : Character
     [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private GameObject myShovel;
     [SerializeField] private Animator animator;
+    public Health health;
     
     [Header("Links to other objects")]
     [SerializeField] private ZombieSpawner[] zombieSpawners;
@@ -34,12 +32,11 @@ public class MainCharacter : Character
     private void Start()
     {
         weaponParent = GetComponentInChildren<WeaponParent>();
-        currentHealth = maxHealth;
     }
     private void Update()
     {
         // Проверка на смерть
-        if (currentHealth <= 0)
+        if (health.currentHealt <= 0)
         {
             if (eventGameOverIsInvoked == false)
             {
@@ -139,6 +136,6 @@ public class MainCharacter : Character
 
     private void Attack()
     {
-        weaponParent.Attack();
+        weaponParent.TryAttack();
     }
 }

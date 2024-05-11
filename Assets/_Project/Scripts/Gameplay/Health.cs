@@ -10,7 +10,8 @@ public class Health : MonoBehaviour
     public float knockbackForce = 10f; // Сила отброса
 
     [SerializeField]
-    private int currentHealt, maxHealth;
+    public int currentHealt = 5;
+    // , maxHealth;
 
     [SerializeField]
     private bool isDead;
@@ -20,7 +21,7 @@ public class Health : MonoBehaviour
     public void InitializeHealth(int health)
     {
         currentHealt = health;
-        maxHealth = health;
+        // maxHealth = health;
         isDead = false;
     }
 

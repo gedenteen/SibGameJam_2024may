@@ -282,14 +282,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  maxHealth: 5
-  currentHealth: 0
   damage: 1
   rigidbody2D: {fileID: 1957372002383505098}
   myShovel: {fileID: 1750863136736679955}
   animator: {fileID: 677593108687056106}
-  zombieSpawners:
-  - {fileID: 0}
+  health: {fileID: 5070574181015777725}
+  zombieSpawners: []
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
@@ -325,8 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 1957372002383505098}
   knockbackForce: 10
-  currentHealt: 3
-  maxHealth: 3
+  currentHealt: 5
   isDead: 0
   OnHitReference:
     m_PersistentCalls:
@@ -400,6 +397,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5739450034880501864, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833495420232222808, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: OnAttackPerfomed.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
@@ -410,6 +411,10 @@ PrefabInstance:
       propertyPath: weaponRender
       value: 
       objectReference: {fileID: 9045426701213823621}
+    - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: delayBeforeAttack
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

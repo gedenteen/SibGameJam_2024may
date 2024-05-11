@@ -32,7 +32,7 @@ public class EnemyCounter : MonoBehaviour
         if (enemy != null)
         {
             enemies.Add(enemy);
-            Debug.Log($"EnemyCounter: AddEnemy: success, count={enemies.Count}");
+            //Debug.Log($"EnemyCounter: AddEnemy: success, count={enemies.Count}");
 
             countOfCreatedEnemies++;
             if (countOfCreatedEnemies == 1)
@@ -47,7 +47,7 @@ public class EnemyCounter : MonoBehaviour
         if (enemy != null && enemies.Contains(enemy))
         {
             enemies.Remove(enemy);
-            Debug.Log($"EnemyCounter: RemoveEnemy: success, count={enemies.Count}");
+            // Debug.Log($"EnemyCounter: RemoveEnemy: success, count={enemies.Count}");
         }
     }
 
