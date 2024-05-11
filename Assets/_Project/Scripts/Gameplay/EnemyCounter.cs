@@ -7,6 +7,7 @@ public class EnemyCounter : MonoBehaviour
     public static EnemyCounter Instance { get; private set;} = null;
     
     private List<Enemy> enemies = new List<Enemy>();
+    private int countOfCreatedEnemies = 0;
 
     private void Awake()
     {
@@ -24,6 +25,12 @@ public class EnemyCounter : MonoBehaviour
         {
             enemies.Add(enemy);
             Debug.Log($"EnemyCounter: AddEnemy: success, count={enemies.Count}");
+
+            countOfCreatedEnemies++;
+            if (countOfCreatedEnemies == 1)
+            {
+                HintController.eventShowNewHint?.Invoke("Чтобы атаковать наведи курсор в сторону врага и нажми левую кнопку мыши");
+            }
         }
     }
 

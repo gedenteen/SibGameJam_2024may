@@ -88,7 +88,7 @@ public class MainCharacter : Character
         }
         moveVelocity = moveInput * speed;    
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0)) // левая кнопка мыши
             this.Attack();
     }
 
