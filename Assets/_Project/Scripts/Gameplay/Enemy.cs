@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private WeaponParent weaponParent;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected WeaponParent weaponParent;
     public bool isDead = false;
 
-    private MainCharacter mainCharacter;
+    protected MainCharacter mainCharacter;
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public class Enemy : Character
         }
     }
 
-    private void Move()
+    protected void Move()
     {
         Vector3 oldPosition = transform.position;
         transform.position = Vector2.MoveTowards(transform.position, mainCharacter.transform.position, speed * Time.fixedDeltaTime);
