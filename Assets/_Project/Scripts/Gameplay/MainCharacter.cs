@@ -49,6 +49,8 @@ public class MainCharacter : Character
 
         // определяем, надо ли двигать персонажа
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveInput = moveInput.normalized;
+        // Debug.Log($"moveInput={moveInput}");
         moveVelocity = moveInput * speed;
 
         // Изменение анимации
@@ -83,7 +85,6 @@ public class MainCharacter : Character
                 Dig(false);
             }
         }
-        moveVelocity = moveInput * speed;    
 
         if (Input.GetMouseButtonDown(0)) // левая кнопка мыши
             this.Attack();
