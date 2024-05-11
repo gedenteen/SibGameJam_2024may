@@ -297,13 +297,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5540838919526124925, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540838919526124925, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540838919526124925, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540838919526124925, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5739450034880501864, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5739450034880501864, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: delay
@@ -321,7 +337,12 @@ PrefabInstance:
       propertyPath: delayBeforeAttack
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: delayBeforeFinishAttack
+      value: 0.4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3755643158350170508, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

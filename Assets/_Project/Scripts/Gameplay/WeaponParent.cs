@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour
 {
+    [Header("Changeable params")]
+    [SerializeField] private bool canRotateWeapon = false;
+    [SerializeField] private float delayBeforeAttack = 0.2f;
+    [SerializeField] private float delayBeforeFinishAttack = 0.3f;
+
+    [Header("Links to objects")]
     public SpriteRenderer charRender, weaponRender;
-
-    //private InputActionReference pointerPosition;
-    public Vector2 PointerPosition {  get; set; }
-    public Vector2 mousePos;
     public Animator animator;
-    public float delay = 0.3f;
-
     public Transform circleOrig;
-    public float radius;
 
-    private bool isAttack;
-    private MainCharacter mainCharacter;
-
+    [Header("Links to objects")]
+    public Vector2 mousePos;
+    public Vector2 PointerPosition {  get; set; }
     public float offset;
 
-    [SerializeField] private float delayBeforeAttack = 0.2f;
+    public float radius;
+    private bool isAttack;
+    private MainCharacter mainCharacter;
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class WeaponParent : MonoBehaviour
 
     void Update()
     {
-        if (isAttack)
+        if (isAttack && canRotateWeapon)
         {
             RotateWeapon();
         }
@@ -78,11 +79,11 @@ public class WeaponParent : MonoBehaviour
 
     private IEnumerator FinishAttack()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delayBeforeFinishAttack);
         isAttack = false;
         if (weaponRender != null)
         {
-            weaponRender.gameObject.SetActive(false);
+            weaponRender.enabled = false;
         }
     }
 
@@ -102,7 +103,7 @@ public class WeaponParent : MonoBehaviour
 
         if (weaponRender != null)
         {
-            weaponRender.gameObject.SetActive(true);
+            weaponRender.enabled = true;
         }
         animator.SetTrigger("Attack");
         DetectCollider();

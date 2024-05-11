@@ -287,7 +287,8 @@ MonoBehaviour:
   myShovel: {fileID: 1750863136736679955}
   animator: {fileID: 677593108687056106}
   health: {fileID: 5070574181015777725}
-  zombieSpawners: []
+  zombieSpawners:
+  - {fileID: 0}
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
@@ -411,6 +412,10 @@ PrefabInstance:
       propertyPath: weaponRender
       value: 
       objectReference: {fileID: 9045426701213823621}
+    - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: canRotateWeapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995574000344910229, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: delayBeforeAttack
       value: 0

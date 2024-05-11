@@ -25,11 +25,11 @@ Transform:
   m_GameObject: {fileID: 3325538641836934478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42000008, y: 0.15, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4351333424772537107}
+  m_Father: {fileID: 5540838919526124925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4380398690979753788
 GameObject:
@@ -62,7 +62,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5540838919526124925}
-  - {fileID: 5968233782410810375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8995574000344910229
@@ -77,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce89e9473f4483418b324efed600469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRotateWeapon: 0
   charRender: {fileID: 0}
   weaponRender: {fileID: 0}
   mousePos: {x: 0, y: 0}
@@ -85,6 +85,7 @@ MonoBehaviour:
   circleOrig: {fileID: 5968233782410810375}
   radius: 0.91
   offset: 0
+  delayBeforeAttack: 0.2
 --- !u!1 &5739450034880501864
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +117,8 @@ Transform:
   m_LocalPosition: {x: 0.42, y: 0.15, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5968233782410810375}
   m_Father: {fileID: 4351333424772537107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3755643158350170508
@@ -209,16 +211,4 @@ MonoBehaviour:
       m_Calls: []
   OnAttackPerfomed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8995574000344910229}
-        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
-        m_MethodName: DetectCollider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
