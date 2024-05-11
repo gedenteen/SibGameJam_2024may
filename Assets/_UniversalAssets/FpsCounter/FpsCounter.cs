@@ -59,7 +59,7 @@ public class FpsCounter : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("FpsCounter: ShowFps: iteration");
+            //Debug.Log("FpsCounter: ShowFps: iteration");
             fpsCount = 1f / Time.unscaledDeltaTime;
             textMesh.text = Mathf.Round(fpsCount).ToString();
             yield return delay;

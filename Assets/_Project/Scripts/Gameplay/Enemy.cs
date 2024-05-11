@@ -6,11 +6,18 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] private Animator animator;
-    // public float speed = 3f;
-    // public float hitpoints = 2;
     public bool isDead = false;
 
     private MainCharacter mainCharacter;
+
+    private void Awake()
+    {
+        Debug.Log($"Enemy: Awake: EnemyCounter.Instance={EnemyCounter.Instance}");
+        if (EnemyCounter.Instance != null)
+        {
+            EnemyCounter.Instance.AddEnemy(this);
+        }
+    }
 
     private void Start()
     {
@@ -23,6 +30,14 @@ public class Enemy : Character
         float distance = Vector2.Distance(transform.position, mainCharacter.transform.position);
         if (distance < 0.8f)
             Attack();
+    }
+
+    private void OnDestroy()
+    {
+        if (EnemyCounter.Instance != null)
+        {
+            EnemyCounter.Instance.RemoveEnemy(this);
+        }
     }
 
     private void Move()

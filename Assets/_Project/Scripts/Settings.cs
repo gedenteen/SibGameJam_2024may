@@ -37,8 +37,8 @@ public class Settings : MonoBehaviour
     public void StartSetAudio()
     {
         // Default values of settings
-        float musicVolume = 1f;
-        float soundVolume = 1f;
+        float musicVolume = 0.5f;
+        float soundVolume = 0.5f;
 
         // Get player values, if he changed them
         if (PlayerPrefs.HasKey(pp_musicVolume))
