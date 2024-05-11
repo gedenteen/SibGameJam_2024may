@@ -41,6 +41,12 @@ public class WindowWithButtons : MonoBehaviour
 
         DataForWindowWithButtons data = listWithData[indexInList];
 
+        if (data.end)
+        {
+            TextOutro.eventActivate.Invoke();
+            return;
+        }
+
         // спрайт
         if (data.showSprite)
         {

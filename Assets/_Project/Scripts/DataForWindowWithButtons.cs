@@ -15,4 +15,6 @@ public class DataForWindowWithButtons : ScriptableObject
     public List<string> textForButtons;
     [SerializeField]
     public bool goToNextScene = false;
+    [SerializeField]
+    public bool end = false;
 }
