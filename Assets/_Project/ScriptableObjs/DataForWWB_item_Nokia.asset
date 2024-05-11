@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13dde560598c81d45914bb8660568d5f, type: 3}
-  m_Name: DataForWWB_Nokia
+  m_Name: DataForWWB_item_Nokia
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 37abd9659e7bdee4a9b0b152dba7f166, type: 3}
   showSprite: 1
