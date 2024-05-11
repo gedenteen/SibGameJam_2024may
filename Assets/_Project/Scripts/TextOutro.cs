@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-using UnityEditor.Build.Content;
 
 public class TextOutro : MonoBehaviour
 {

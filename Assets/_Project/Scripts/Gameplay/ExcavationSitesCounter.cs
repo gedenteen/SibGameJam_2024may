@@ -24,10 +24,12 @@ public class ExcavationSitesCounter : MonoBehaviour
     public void Add(ExcavationSite excavationSite)
     {
         countOfNotExcavatedSites++;
+        Debug.Log($"countOfNotExcavatedSites={countOfNotExcavatedSites}");
     }
 
     public void Remove(ExcavationSite excavationSite)
     {
         countOfNotExcavatedSites--;
+        Debug.Log($"countOfNotExcavatedSites={countOfNotExcavatedSites}");
     }
 }
