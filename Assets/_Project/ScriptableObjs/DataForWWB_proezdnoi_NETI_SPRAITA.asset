@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13dde560598c81d45914bb8660568d5f, type: 3}
-  m_Name: DataForWWB_proezdnoi
+  m_Name: DataForWWB_proezdnoi_NETI_SPRAITA
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   showSprite: 1
