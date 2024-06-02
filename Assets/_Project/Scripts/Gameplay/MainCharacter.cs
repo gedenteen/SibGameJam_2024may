@@ -78,7 +78,7 @@ public class MainCharacter : Character
         // Копаем?
         if (nearbyExcavationSite != null)
         {
-            if (onExcavationSite && Input.GetKey(KeyCode.F))
+            if (onExcavationSite && Input.GetKey(KeyCode.F) && nearbyExcavationSite.CanBeDigged())
             {
                 Dig(true);
             }
@@ -108,18 +108,12 @@ public class MainCharacter : Character
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CheckOnExcavationSite(other))
-        {
-            onExcavationSite = true;
-        }
+        onExcavationSite = CheckOnExcavationSite(other);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (CheckOnExcavationSite(other))
-        {
-            onExcavationSite = false;
-        }
+        onExcavationSite = false;
     }
 
     private bool CheckOnExcavationSite(Collider2D other)

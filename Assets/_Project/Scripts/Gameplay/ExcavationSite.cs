@@ -77,4 +77,12 @@ public class ExcavationSite : MonoBehaviour
     {
         isDigging = value;
     }
+
+    public bool CanBeDigged()
+    {
+        if (remainingTime > 0f)
+            return true;
+        else
+            return false;
+    }
 }
