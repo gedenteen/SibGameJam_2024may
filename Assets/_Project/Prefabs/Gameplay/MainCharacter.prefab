@@ -242,8 +242,16 @@ MonoBehaviour:
   rigidbody2D: {fileID: 1957372002383505098}
   myShovel: {fileID: 1750863136736679955}
   animator: {fileID: 677593108687056106}
+  digSound: {fileID: 8300000, guid: 8353d1f54dfca1c4280b78064b00073c, type: 3}
   health: {fileID: 5070574181015777725}
-  zombieSpawners: []
+  zombieSpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &677593108687056106
 Animator:
   serializedVersion: 5
@@ -403,6 +411,10 @@ PrefabInstance:
       propertyPath: radius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e33191be8c2b5f24893b6a082a90932b, type: 3}
     - target: {fileID: 1704630629773562822, guid: 4c52efff9242bd74c8db7ca33287fa25, type: 3}
       propertyPath: canRotateWeapon
       value: 1
