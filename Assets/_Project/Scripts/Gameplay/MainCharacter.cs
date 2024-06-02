@@ -12,6 +12,7 @@ public class MainCharacter : Character
     [SerializeField] private GameObject myShovel;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioClip digSound;
+    [SerializeField] private float _delayForSoundDig = 0.7f;
     
     public Health health;
     
@@ -25,6 +26,7 @@ public class MainCharacter : Character
     private ExcavationSite nearbyExcavationSite = null;
     private WeaponParent weaponParent;
     private GunParent gunParent;
+    private float timerForSoundDig = 0f;
 
     private void OnValidate()
     {
@@ -101,6 +103,8 @@ public class MainCharacter : Character
         {
             ExcavationSitesCounter.Instance.TeleportToExcavationSite(this.transform);
         }
+
+        timerForSoundDig -= Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -137,7 +141,11 @@ public class MainCharacter : Character
         myShovel.SetActive(value);
         nearbyExcavationSite.SetStateIsDigging(value);
 
-        SoundManager.instance.PlaySound(digSound, transform, 0.5f);
+        if (value && timerForSoundDig <= 0f)
+        {
+            SoundManager.instance.PlaySound(digSound, transform, 0.5f);
+            timerForSoundDig = _delayForSoundDig;
+        }
 
         foreach (ZombieSpawner zombieSpawner in zombieSpawners)
         {

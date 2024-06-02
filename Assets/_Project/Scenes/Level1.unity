@@ -1552,6 +1552,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01a1d4ccad6007148bef82fe6f05be11, type: 3}
+--- !u!114 &1067720695801232925 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2865578532488675104, guid: 01a1d4ccad6007148bef82fe6f05be11, type: 3}
+  m_PrefabInstance: {fileID: 1067720695801232924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482f38d0307757a4f8d1c657676e1750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5995812013457765320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1612,6 +1623,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4270999144501995901, guid: a65614b401ea1114eae797705920f5e1, type: 3}
+      propertyPath: delayForSoundDig
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270999144501995901, guid: a65614b401ea1114eae797705920f5e1, type: 3}
+      propertyPath: zombieSpawners.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270999144501995901, guid: a65614b401ea1114eae797705920f5e1, type: 3}
+      propertyPath: zombieSpawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1067720695801232925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

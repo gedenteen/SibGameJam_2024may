@@ -17,10 +17,11 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip audioClip, Transform spawnTransform, float volume)
     {
-        AudioSource audioSource = Instantiate(soundObject, spawnTransform.position, Quaternion.identity);
+        AudioSource audioSource = Instantiate(soundObject, spawnTransform.position, Quaternion.identity, this.transform);
         audioSource.clip = audioClip;
         audioSource.volume = volume;
         audioSource.Play();
+        audioSource.transform.name = audioClip.name;
 
         float clipLenght = audioSource.clip.length;
 

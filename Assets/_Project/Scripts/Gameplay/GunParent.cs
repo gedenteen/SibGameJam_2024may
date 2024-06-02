@@ -26,7 +26,7 @@ public class GunParent : MonoBehaviour
         bulletCurrentCount = bulletMaxCount;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // �������� ���������� ������� � �������� ������������ ������ �������� ���� ������
         Vector3 cursorPositionPixels = Input.mousePosition;
@@ -56,13 +56,14 @@ public class GunParent : MonoBehaviour
             scale.y = 1;
         transform.localScale = scale;
 
-        float timerOut = Time.deltaTime;
+        float timerOut = Time.fixedDeltaTime;
         fireRate -= timerOut;
         reloadRate -= timerOut;
     }
 
     public void Shoot()    
     {
+        Debug.Log($"GunParent: Shoot: fireRate={fireRate} reloadRate={reloadRate}");
         if (bulletCurrentCount > 0 && reloadRate <= 0f)
         {
             if (fireRate <= 0f)
