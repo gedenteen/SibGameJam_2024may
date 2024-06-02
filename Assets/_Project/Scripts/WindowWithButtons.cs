@@ -23,7 +23,7 @@ public class WindowWithButtons : MonoBehaviour
     [Header("Links to assets")]
     [SerializeField] private List<DataForWindowWithButtons> listWithData = new List<DataForWindowWithButtons>();
 
-    private int indexInList = 0;
+    [SerializeField] private int indexInList = 0;
 
     private void Awake()
     {

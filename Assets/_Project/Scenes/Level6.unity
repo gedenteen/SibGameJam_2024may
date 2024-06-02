@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 7219423803150761644, guid: 71cdd2e7270fdb8428aa5392d92dac69, type: 3}
       propertyPath: sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 2109482908, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
+      objectReference: {fileID: 1989735472, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
     - target: {fileID: 7219423803150761644, guid: 71cdd2e7270fdb8428aa5392d92dac69, type: 3}
       propertyPath: sprites.Array.data[3]
       value: 
@@ -978,7 +978,7 @@ PrefabInstance:
     - target: {fileID: 7219423803150761644, guid: 71cdd2e7270fdb8428aa5392d92dac69, type: 3}
       propertyPath: sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 2109482908, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
+      objectReference: {fileID: 1989735472, guid: 5e37105cf910b024fa0e47f580874dc9, type: 3}
     - target: {fileID: 7219423803150761644, guid: 71cdd2e7270fdb8428aa5392d92dac69, type: 3}
       propertyPath: sprites.Array.data[3]
       value: 
@@ -1038,14 +1038,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1800831231, guid: 5341cd64063104840bc8ea40b5b7ac39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
