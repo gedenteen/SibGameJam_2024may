@@ -26,7 +26,7 @@ public class TextOutro : MonoBehaviour
 
     private void Update()
     {
-        if (activated && Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (activated && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)))
         {
             if (currentIndex < list.Count - 1)
             {

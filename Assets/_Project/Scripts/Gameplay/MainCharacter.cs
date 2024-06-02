@@ -94,6 +94,11 @@ public class MainCharacter : Character
             this.Shoot();
         if (Input.GetKeyDown(KeyCode.R))
             this.Reload();
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.G))
+        {
+            ExcavationSitesCounter.Instance.TeleportToExcavationSite(this.transform);
+        }
     }
 
     private void FixedUpdate()

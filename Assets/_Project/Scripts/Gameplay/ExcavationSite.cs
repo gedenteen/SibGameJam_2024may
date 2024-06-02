@@ -35,7 +35,14 @@ public class ExcavationSite : MonoBehaviour
 
         // Debug.Log($"ExcavationSite: меня копают");
 
-        remainingTime -= Time.fixedDeltaTime;
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            remainingTime = 0f;
+        }
+        else
+        {
+            remainingTime -= Time.fixedDeltaTime;
+        }
         TryChangeSprite();
 
         // Раскопали до конца?
