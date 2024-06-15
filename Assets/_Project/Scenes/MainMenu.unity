@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextFps
       objectReference: {fileID: 0}
+    - target: {fileID: 6494007139945554028, guid: 97575acf18a3a8247b00f563ee3a1024, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
